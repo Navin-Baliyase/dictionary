@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-dark py-5 text-center">Available Reports in the system</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">File Name</th>
+        <th scope="col">Show</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @icicles.each do |icicle| %>
+      <tr>
+        <td><%= icicle.upload.filename if icicle && icicle.upload %></td>
+        <td><%= link_to 'Show', icicle %></td>
+        <td><%= link_to 'Edit', edit_icicle_path(icicle) %></td>
+        <td><%= link_to 'Destroy', icicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col">
+      <%= link_to "Add Report", new_icicle_path, :class => 'btn btn-success btn-block' %>
+    </div>
+  </div>
+</div>

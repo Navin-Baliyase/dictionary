@@ -1,0 +1,16 @@
+
+<p>
+  <strong>Phone:</strong>
+  <%= @icicle.phone %>
+</p>
+<p>
+	<strong>Your file is succesfully uploaded : </strong>
+	<%= link_to( @icicle.upload.filename , @icicle.upload) %>
+</p>
+<p class="text-success"> Whole file is parsed to <strong>@data</strong> variable and is splitted to <strong>line</strong> to read each line</p>
+<p class="text-danger"> Read the file from lib diractory.</p>
+<% @data.each_line do |line|%>
+<%=line%><br>
+<%end%>
+<%= link_to 'Edit', edit_icicle_path(@icicle) %> |
+<%= link_to 'Back', icicles_path %>

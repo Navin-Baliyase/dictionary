@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="form">
+    <%= form_with(model: icicle, local: true) do |form| %>
+    <% if icicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(icicle.errors.count, "error") %> prohibited this icicle from being saved:</h2>
+
+      <ul>
+        <% icicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="group">
+      <%= form.label :phone %>
+      <%= form.number_field :phone %>
+      <%= form.label :upload %>
+      <%= form.file_field :upload %>
+      <%= form.submit %>
+    </div>
+    <% end %>
+  </div>
+</div>

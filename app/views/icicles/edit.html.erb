@@ -1,0 +1,16 @@
+<h1 class="text-dark py-5 text-center">Changed Mind! Upload a new Invoice</h1>
+<hr>
+<div class="text-center">
+	<%= render 'form', icicle: @icicle %>
+</div>
+<hr>
+<br>
+
+<div class="row">
+	<div class="col">
+		<%= link_to "Show", @icicle, :class => 'btn btn-info btn-block' %>
+	</div>
+	<div class="col">
+		<%= link_to "Back", icicles_path, :class => 'btn btn-warning btn-block' %>
+	</div>
+</div>
