@@ -22,9 +22,11 @@
 	</strong>
 </p></pre>
 <p class="text-success"> Desired Output : </p>
-<%=@final_words%>
+<% if @final_words[0] == "" %>
+<p class="text-danger">No match found</p>
+<%else%>
+<strong><p class="text-success"><%=@final_words%></p></strong>
+<%end%>
 <br><br>
 <%= link_to 'Edit', edit_icicle_path(@icicle) %> |
 <%= link_to 'Back', icicles_path %>
-
-

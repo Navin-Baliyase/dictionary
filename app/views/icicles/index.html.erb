@@ -3,6 +3,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th scope="col">Phone</th>
         <th scope="col">File Name</th>
         <th scope="col">Show</th>
         <th scope="col">Edit</th>
@@ -12,6 +13,7 @@
     <tbody>
       <% @icicles.each do |icicle| %>
       <tr>
+        <td><%= icicle.phone if icicle && icicle.phone %></td>
         <td><%= icicle.upload.filename if icicle && icicle.upload %></td>
         <td><%= link_to 'Show', icicle %></td>
         <td><%= link_to 'Edit', edit_icicle_path(icicle) %></td>
