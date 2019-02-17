@@ -1,19 +1,29 @@
 
 <p>
-  <strong>Phone:</strong>
-  <%= @icicle.phone %>
+	<strong>Phone:</strong>
+	<%= @icicle.phone %>
 </p>
 <p>
-	<strong>Your file is succesfully uploaded : </strong>
+	<strong>Parsed File : </strong>
 	<%= link_to( @icicle.upload.filename , @icicle.upload) %>
 </p>
-<p class="text-success"> Whole file is parsed to <strong>@data</strong> variable and is splitted to <strong>line</strong> to read each line</p>
-<p class="text-danger"> Read the file from lib diractory.</p>
-<%# @data.each_line do |line|%>
-<%#=line%>
-<%#end%>
+<p class="text-danger"> Taken help from google to achieve desired output.</p>
+<pre><p class="text-info">
+	<strong>
+		Mapping Used :  
+		2 = a b c
+		3 = d e f
+		4 = g h i
+		5 = j k l
+		6 = m n o
+		7 = p q r s
+		8 = t u v
+		9 = w x y z
+	</strong>
+</p></pre>
+<p class="text-success"> Desired Output : </p>
 <%=@final_words%>
-<%#=letters%>
+<br><br>
 <%= link_to 'Edit', edit_icicle_path(@icicle) %> |
 <%= link_to 'Back', icicles_path %>
 

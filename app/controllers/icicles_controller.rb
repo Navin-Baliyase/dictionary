@@ -11,13 +11,11 @@ class IciclesController < ApplicationController
   # GET /icicles/1
   # GET /icicles/1.json
   def show
-    @data = File.read(@icicle.upload_path)
     @path = @icicle.upload_path
     digits = @icicle.phone.to_s
     letters = {"2" => ["a", "b", "c"],"3" => ["d", "e", "f"],"4" => ["g", "h", "i"],"5" => ["j", "k", "l"],"6" => ["m", "n", "o"],"7" => ["p", "q", "r", "s"],"8" => ["t", "u", "v"],"9" => ["w", "x", "y", "z"]}
     dictionary = []
-    file_path = @path
-    File.foreach( file_path ) do |word|
+    File.foreach( @path ) do |word|
       dictionary.push word.chop.to_s.downcase
     end
     keys = digits.chars.map{|digit|letters[digit]}
