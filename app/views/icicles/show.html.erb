@@ -7,7 +7,6 @@
 	<strong>Parsed File : </strong>
 	<%= link_to( @icicle.upload.filename , @icicle.upload) %>
 </p>
-<p class="text-danger"> Taken help from google to achieve desired output.</p>
 <pre><p class="text-info">
 	<strong>
 		Mapping Used :  
@@ -22,11 +21,8 @@
 	</strong>
 </p></pre>
 <p class="text-success"> Desired Output : </p>
-<% if @final_words[0] == "" %>
-<p class="text-danger">No match found</p>
-<%else%>
-<strong><p class="text-success"><%=@final_words%></p></strong>
-<%end%>
+<strong>Time Taken (ms) : <p class="text-warning"><%=@time_taken%></p></strong>
+<strong><p class="text-success"><%=@desired_result_new%></p></strong>
 <br><br>
 <%= link_to 'Edit', edit_icicle_path(@icicle) %> |
 <%= link_to 'Back', icicles_path %>
